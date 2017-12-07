@@ -25,9 +25,12 @@ class MonotoneBinaryDecisionTree(object):
         Constructs and fits a monotone binary decision
         tree to the input dataset.
 
-        :param X_train: an m x p nd-array of input features
-        :param y: an m x 1 nd-array of class labels. It is further
-        required that the dataset is:
+        :param X_train: an m x p nd-array of input features.
+        It is further required that the attributes are discrete,
+        represented as integers (the mapping should be handled
+        externally).
+        :param y: an m x 1 nd-array of class labels.
+        It is further required that the dataset is:
         - consistent: x_i = x_j ==> y_i = y_j
         - monotone: x_i <= x_j ==> y_i <= y_j
         """
