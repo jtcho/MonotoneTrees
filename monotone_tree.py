@@ -2,11 +2,25 @@ import numpy as np
 
 class MonotoneBinaryDecisionTree(object):
     """
-    A simple implementation of a monotone binary decision tree,
-    based on Potharst & Feelders' algorithm and ID3.
+    A simple implementation of a monotone binary decision tree
+    for discrete input spaces, based on Potharst & Feelders'
+    algorithm and ID3.
     """
 
-    def fit(X_train, y):
+    def _validate_monotonicity(self, X, y):
+        """
+        Validates whether the given input dataset
+        is in fact monotone.
+        """
+        raise NotImplementedError
+
+    def _tree(self, X_train, y):
+        raise NotImplementedError
+
+    def _split(self, X, y):
+        raise NotImplementedError
+
+    def fit(self, X_train, y):
         """
         Constructs and fits a monotone binary decision
         tree to the input dataset.
@@ -19,7 +33,7 @@ class MonotoneBinaryDecisionTree(object):
         """
         raise NotImplementedError
 
-    def predict(x):
+    def predict(self, x):
         """
         Outputs a predictive class label for an input sample.
 
